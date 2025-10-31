@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 
-export const Route = createFileRoute('/resume')({
+export const Route = createFileRoute('/cv')({
   component: ResumePage,
 })
 
@@ -38,7 +38,7 @@ function ResumePage() {
         <iframe
           className="resume-embed"
           src={resumeUrl}
-          title="Resume"
+          title="CV"
           onClick={() => setOpen(true)}
         />
       </div>
@@ -49,7 +49,7 @@ function ResumePage() {
             <button className="modal-close" aria-label="Close" onClick={() => setOpen(false)}>
               ×
             </button>
-            <iframe src={resumeUrl} title="Resume Fullscreen" />
+            <iframe src={resumeUrl} title="CV Fullscreen" />
           </div>
         </div>
       ) : null}

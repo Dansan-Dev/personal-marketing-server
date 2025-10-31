@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
+import { SocialBubbles } from '../components/SocialBubbles'
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -28,6 +29,14 @@ function App() {
           <h1 className="home-title">{name}</h1>
           <h2 className="home-subtitle">{title}</h2>
           <p className="home-desc">{description}</p>
+          <SocialBubbles
+            size={48}
+            links={[
+              { title: 'LinkedIn', href: 'https://www.linkedin.com/in/danielsandstrom', iconSrc: '/linkedin_icon.svg', bgColor: '#ffffff' },
+              { title: 'GitHub', href: 'https://github.com/dansan', iconSrc: '/github-mark.png', bgColor: '#ffffff'},
+              { title: 'Email', href: 'mailto:work@danielsandstrom.org', iconSrc: '/mail_icon.svg', bgColor: '#ffffff' },
+            ]}
+          />
         </section>
         <section>
           <div className="carousel">
