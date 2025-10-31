@@ -32,8 +32,8 @@ function App() {
           <SocialBubbles
             size={48}
             links={[
-              { title: 'LinkedIn', href: 'https://www.linkedin.com/in/danielsandstrom', iconSrc: '/linkedin_icon.svg', bgColor: '#ffffff' },
-              { title: 'GitHub', href: 'https://github.com/dansan', iconSrc: '/github-mark.png', bgColor: '#ffffff'},
+              { title: 'LinkedIn', href: 'https://www.linkedin.com/in/daniel-sandstr%C3%B6m-449874316/', iconSrc: '/linkedin_icon.svg', bgColor: '#ffffff' },
+              { title: 'GitHub', href: 'https://github.com/Dansan-Dev', iconSrc: '/github-mark.png', bgColor: '#ffffff'},
               { title: 'Email', href: 'mailto:work@danielsandstrom.org', iconSrc: '/mail_icon.svg', bgColor: '#ffffff' },
             ]}
           />
