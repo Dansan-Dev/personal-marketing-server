@@ -7,7 +7,7 @@ export const Route = createFileRoute('/project/nova_bank')({
 })
 
 function RouteComponent() {
-  return <div>
+  return <div className='project-page-container'>
     <BackButton to="/portfolio" label="Back" />
     <Project
       name="Nova Bank Platform"
@@ -33,5 +33,6 @@ function RouteComponent() {
         presentation: 'https://youtu.be/nE_16cvehM0?t=399',
       }}
     />
+    <BackButton to='/portfolio' label='Back' hidden={true} />
   </div>
 }

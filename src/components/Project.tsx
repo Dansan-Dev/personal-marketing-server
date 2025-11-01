@@ -16,7 +16,7 @@ export type ProjectProps = {
   
   export default function Project({ name, description, tech, highlights, reflections, links }: ProjectProps) {
     return (
-      <main className="page-container">
+      <main className="project-component page-container">
         <article className="bg-[rgba(12,20,32,0.5)] border border-[var(--border-dark)] rounded-2xl shadow-md p-7 md:p-9">
           {/* Header */}
           <header className="mb-6 md:mb-8">

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/project/personal_website')({
 })
 
 function RouteComponent() {
-  return <div>
+  return <div className='project-page-container'>
     <BackButton to="/portfolio" label="Back" />
     <Project
       name="Personal Website"
@@ -21,5 +21,6 @@ function RouteComponent() {
       ]}
       links={{ github: 'https://github.com/Dansan-Dev/personal-marketing-server' }}
     />
+    <BackButton to='/portfolio' label='Back' hidden={true} />
   </div>
 }

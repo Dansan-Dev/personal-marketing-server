@@ -7,7 +7,7 @@ export const Route = createFileRoute('/project/kafka_upskilling')({
 })
 
 function RouteComponent() {
-  return <div>
+  return <div className='project-page-container'>
     <BackButton to="/portfolio" label="Back" />
     <Project
       name="Smart Restaurant App"
@@ -29,5 +29,6 @@ function RouteComponent() {
         github: 'https://github.com/saltsthlm/restaurant-order-service',
       }}
     />
+    <BackButton to='/portfolio' label='Back' hidden={true} />
   </div>
 }

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/project/ai_assessment')({
 })
 
 function RouteComponent() {
-  return <div>
+  return <div className='project-page-container'>
     <BackButton to="/portfolio" label="Back" />
     <Project
       name="AI Assessment App"
@@ -30,5 +30,6 @@ function RouteComponent() {
         github: 'https://github.com/saltsthlm/jfs-2025-03-31-salt-ai-assesment',
       }}
     />
+    <BackButton to='/portfolio' label='Back' hidden={true} />
   </div>
 }

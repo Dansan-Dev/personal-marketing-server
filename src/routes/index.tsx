@@ -38,7 +38,7 @@ function App() {
             ]}
           />
         </section>
-        <section>
+        <section className="carousel-container">
           <div className="carousel">
             <img src={images[index]} alt="image" />
             <div className="carousel-dots">

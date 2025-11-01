@@ -16,7 +16,7 @@ function CVPage() {
   return (
     <div className="page-container">
       <div className="resume-frame">
-        <div style={{display:'flex', gap:12, alignItems:'center', flexWrap:'wrap'}}>
+        <div className='resume-options-bar' style={{display:'flex', gap:12, alignItems:'center', flexWrap:'wrap'}}>
           <div className="filter-tags">
             <button
               className={`tag ${lang === 'en' ? 'active' : ''}`}
