@@ -163,7 +163,7 @@ function PortfolioPage() {
                 {tags.map((t) => (
                   <button
                     key={t}
-                    className={`tag ${activeTags.includes(t) ? 'active' : ''}`}
+                    className={`filter-tag ${activeTags.includes(t) ? 'active' : ''}`}
                     onClick={() => toggleTag(t)}
                   >
                     {t}

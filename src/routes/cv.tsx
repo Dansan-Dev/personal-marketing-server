@@ -16,16 +16,16 @@ function CVPage() {
   return (
     <div className="page-container">
       <div className="resume-frame">
-        <div className='resume-options-bar' style={{display:'flex', gap:12, alignItems:'center', flexWrap:'wrap'}}>
+        <div className='resume-options-bar'>
           <div className="filter-tags">
             <button
-              className={`tag ${lang === 'en' ? 'active' : ''}`}
+              className={`filter-tag cv-language-selector ${lang === 'en' ? 'active' : ''}`}
               onClick={() => setLang('en')}
             >
               English
             </button>
             <button
-              className={`tag ${lang === 'se' ? 'active' : ''}`}
+              className={`filter-tag cv-language-selector ${lang === 'se' ? 'active' : ''}`}
               onClick={() => setLang('se')}
             >
               Svenska
