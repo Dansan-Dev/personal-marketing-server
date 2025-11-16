@@ -9,7 +9,7 @@ function RouteComponent() {
   return <div className='project-page-container'>
     <Project
       name="AI Assessment App"
-      description="An app responsible for managing forms for assessing AI Maturity — including a form creator, notifications, and handling links to fillable forms."
+      description="An app responsible for managing forms for assessing AI Maturity. It includes a form creator, notification management, and links management for fillable forms."
       highlights={[
         'Structured backend data models & implemented REST API endpoints',
         'Developed a Custom Form Builder in the frontend',
@@ -17,13 +17,15 @@ function RouteComponent() {
       ]}
       tech={[
         'Spring Boot',
-        'Postgres & Supabase',
+        'Postgres',
+        'Supabase',
         'ReactJS',
         'TanStack Router & Query',
         'Docker',
         'Fly.io',
+        'JUnit',
       ]}
-      reflections={`It was my first time being fully responsible for the data models — a great learning experience in designing flexible, scalable data structures and improving documentation and communication across the team.`}
+      reflections={`It was my first time being almost solely responsible for the data models. It was a great learning experience in designing flexible, scalable data structures and improving documentation and communication across the team.`}
       links={{
         github: 'https://github.com/saltsthlm/jfs-2025-03-31-salt-ai-assesment',
       }}

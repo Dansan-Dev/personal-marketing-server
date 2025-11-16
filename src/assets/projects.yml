@@ -3,7 +3,7 @@ projects:
     client: "SALT"
     title: "Nova Bank Platform"
     path: "nova_bank"
-    desc: "Full-stack banking app built with Java, React, and Postgres during SALT’s final project."
+    desc: "Full-stack banking app built as SALT’s final project."
     tags:
       - "Backend"
       - "Database"
@@ -19,7 +19,7 @@ projects:
     client: "SALT"
     title: "AI Assessment Tool"
     path: "ai_assessment"
-    desc: "Form builder and management tool for assessing AI maturity with custom workflows."
+    desc: "Form builder and management tool for assessing AI maturity."
     tags:
       - "Backend"
       - "Database"
