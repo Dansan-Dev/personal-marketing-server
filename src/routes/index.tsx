@@ -13,7 +13,7 @@ function App() {
   const [index, setIndex] = useState(0)
   const name = 'Daniel Sandström'
   const title = 'Fullstack Java Developer'
-  const description = 'I build engaging digital experiences across web and native platforms with a focus on delightful interactions, performance, and accessibility.'
+  const description = 'I build reliable Apps and REST APIs using clean data models, consistent testing, and thoughtful design that keeps complexity down while making systems easy to understand and maintain.'
 
   useEffect(() => {
     const id = setInterval(() => {
