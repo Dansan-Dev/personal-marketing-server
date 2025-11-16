@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Project from '@/components/Project'
-import BackButton from '@/components/BackButton'
 
 export const Route = createFileRoute('/project/kafka_upskilling')({
   component: RouteComponent,
@@ -8,7 +7,6 @@ export const Route = createFileRoute('/project/kafka_upskilling')({
 
 function RouteComponent() {
   return <div className='project-page-container'>
-    <BackButton to="/portfolio" label="Back" />
     <Project
       name="Smart Restaurant App"
       description="Digital restaurant solution handling and managing online orders. Built to learn Apache Kafka and Microservice Architecture with four microservices: Order, Payment, Delivery, and Kitchen."
@@ -29,6 +27,5 @@ function RouteComponent() {
         github: 'https://github.com/saltsthlm/restaurant-order-service',
       }}
     />
-    <BackButton to='/portfolio' label='Back' hidden={true} />
   </div>
 }

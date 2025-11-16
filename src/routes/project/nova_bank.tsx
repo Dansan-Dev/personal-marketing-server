@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Project from '@/components/Project'
-import BackButton from '@/components/BackButton'
 
 export const Route = createFileRoute('/project/nova_bank')({
   component: RouteComponent,
@@ -8,31 +7,30 @@ export const Route = createFileRoute('/project/nova_bank')({
 
 function RouteComponent() {
   return <div className='project-page-container'>
-    <BackButton to="/portfolio" label="Back" />
     <Project
       name="Nova Bank Platform"
-      description="Final project of the 13-week Java Fullstack Program at SALT. A banking solution for a fictional customer with business and functional requirements — secure, scalable, user-friendly, and innovative."
+      description="Final project of the 13-week Java Fullstack Program at SALT. A banking solution for a fictional customer with functional and business requirements in areas such as security, scalability and user-friendliness."
       highlights={[
-        'Acted as Project Manager — led communication, meetings, planning',
+        'Acted as Project Manager: responsible for meetings and ensuring inter-team communication and collaboration',
         'Worked as Backend Developer across all layers',
       ]}
       tech={[
         'Spring Boot',
-        'Postgres',
+        'PostgreSQL',
         'Supabase',
         'ReactJS',
         'TanStack Router & Query',
         'Clerk',
+        'Docker',
         'GCP',
         'GitHub Actions (CI/CD)',
       ]}
-      reflections={`As Project Manager, I grew my leadership, communication, and documentation skills. As Backend Developer, I learned to deliver high-quality, secure software under tight deadlines in a team environment.`}
+      reflections={`As Project Manager I grew my leadership, communication, and documentation skills. As a Backend Developer I learned to deliver secure, scalable, high-quality software under tight deadlines in a team environment.`}
       links={{
         github: 'https://github.com/saltsthlm/jfs-2025-03-31-novabank-ab',
         demo: 'https://youtu.be/nE_16cvehM0?t=1389',
         presentation: 'https://youtu.be/nE_16cvehM0?t=399',
       }}
     />
-    <BackButton to='/portfolio' label='Back' hidden={true} />
   </div>
 }

@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Project from '@/components/Project'
-import BackButton from '@/components/BackButton'
 
 export const Route = createFileRoute('/project/resume_builder')({
   component: RouteComponent,
@@ -8,7 +7,6 @@ export const Route = createFileRoute('/project/resume_builder')({
 
 function RouteComponent() {
   return <div className='project-page-container'>
-    <BackButton to="/portfolio" label="Back" />
     <Project
       name="Resume Builder App"
       description="A new solution for SALT consultants to build, version, and manage CVs. Separates resume data from theme, allowing flexible theme changes and improved PDF quality."
@@ -30,6 +28,5 @@ function RouteComponent() {
         live: 'https://frontend-proud-butterfly-9919.fly.dev/',
       }}
     />
-    <BackButton to='/portfolio' label='Back' hidden={true} />
   </div>
 }

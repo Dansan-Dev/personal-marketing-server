@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Project from '@/components/Project'
-import BackButton from '@/components/BackButton'
 
 export const Route = createFileRoute('/project/testing_health')({
   component: RouteComponent,
@@ -8,7 +7,6 @@ export const Route = createFileRoute('/project/testing_health')({
 
 function RouteComponent() {
   return <div className='project-page-container'>
-    <BackButton to="/portfolio" label="Back" />
     <Project
       name="Testing & Health Project"
       description="Implemented automated tests and a health dashboard for Chattrick products, improving reliability and observability."
@@ -28,7 +26,6 @@ function RouteComponent() {
       ]}
       links={{}}
     />
-    <BackButton to='/portfolio' label='Back' hidden={true} />
   </div>
 }
 
