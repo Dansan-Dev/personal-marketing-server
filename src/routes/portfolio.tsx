@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
+import projectsData from '@/assets/projects.yml'
 
 // Define all tags with their categories
 const tagDefinitions = {
@@ -23,116 +24,52 @@ const tagDefinitions = {
   Skills: {
     leadership: 'Leadership',
   },
-} as const
+}
 
 export const Route = createFileRoute('/portfolio')({
   component: PortfolioPage,
 })
 
-function PortfolioPage() {
-  // Create tag constants from definitions
-  const java = tagDefinitions.Technologies.java
-  const springBoot = tagDefinitions.Technologies.springBoot
-  const typeScript = tagDefinitions.Technologies.typeScript
-  const react = tagDefinitions.Technologies.react
-  const apacheKafka = tagDefinitions.Technologies.apacheKafka
-  const docker = tagDefinitions.Technologies.docker
-
-  const backend = tagDefinitions.Domains.backend
-  const database = tagDefinitions.Domains.database
-  const frontend = tagDefinitions.Domains.frontend
-  const restApi = tagDefinitions.Domains.restApi
-  const ai = tagDefinitions.Domains.ai
-  const microservices = tagDefinitions.Domains.microservices
-  const webDevelopment = tagDefinitions.Domains.webDevelopment
-
-  const leadership = tagDefinitions.Skills.leadership
-
-  const allProjects = useMemo(
-    () => [
-      { id: 1, 
-        title: 'SALT - Nova Bank Platform',
-        path: 'nova_bank',
-        desc: 'Full-stack banking app built with Java, React, and Postgres during SALT’s final project.', 
-        tags: [
-          backend, 
-          database, 
-          restApi, 
-          leadership, 
-          webDevelopment, 
-          java, 
-          springBoot, 
-          docker
-      ] },
-      { id: 2, 
-        title: 'SALT - AI Assessment Tool', 
-        path: 'ai_assessment',
-        desc: 'Form builder and management tool for assessing AI maturity with custom workflows.', 
-        tags: [
-          backend, 
-          database, 
-          frontend, 
-          restApi, 
-          leadership, 
-          webDevelopment, 
-          java, 
-          springBoot, 
-          typeScript, 
-          react, 
-          docker
-      ] },
-      { id: 3, 
-        title: 'SALT - Resume Builder', 
-        path: 'resume_builder',
-        desc: 'AI-powered CV builder with versioning, LinkedIn import, and theme customization.', 
-        tags: [
-          backend, 
-          frontend, 
-          restApi, 
-          leadership, 
-          webDevelopment, 
-          ai, 
-          java, 
-          springBoot, 
-          typeScript, 
-          react, 
-          docker
-      ] },
-      { id: 4, 
-        title: 'SALT - Apache Kafka Upskilling Project', 
-        path: 'kafka_upskilling',
-        desc: 'Kafka-based microservice system for managing restaurant orders and workflows.', 
-        tags: [
-          backend, 
-          restApi, 
-          apacheKafka, 
-          microservices, 
-          java, 
-          springBoot, 
-          docker
-      ] },
-      { id: 5, 
-        title: 'Private - Personal Marketing Website', 
-        path: 'personal_website',
-        desc: 'My portfolio site built with React, TanStack, and Tailwind.', 
-        tags: [
-          frontend, 
-          webDevelopment, 
-          typeScript, 
-          react, 
-          docker
-      ] },
-    ],
-    [],
-  )
+function PortfolioPage() {  
+  // Prepare a canonical list of defined tags for normalization
+  const definedTags = useMemo(() => {
+    return [
+      ...Object.values(tagDefinitions.Technologies),
+      ...Object.values(tagDefinitions.Domains),
+      ...Object.values(tagDefinitions.Skills),
+    ]
+  }, [])
+  
+  type YamlProject = {
+    id: number
+    title: string
+    path: string
+    desc: string
+    tags: Array<string>
+  }
+  
+  const allProjects = useMemo(() => {
+    const items = (projectsData?.projects ?? []) as Array<YamlProject>
+    // Normalize YAML tags to match our defined tag values (case-insensitive)
+    const normalizeTag = (t: string) => {
+      const match = definedTags.find(
+        (dt) => dt.toLowerCase() === t.toLowerCase()
+      )
+      return match ?? t
+    }
+    return items.map((p) => ({
+      ...p,
+      tags: (p.tags).map(normalizeTag),
+    }))
+  }, [definedTags])
 
   const tagCategories = useMemo(() => {
-    const allTags = Array.from(new Set(allProjects.flatMap((p) => p.tags))) as Array<string>
+    const allTags = Array.from(new Set(allProjects.flatMap((p) => p.tags)))
     
     // Automatically generate categories from tagDefinitions
     const categorized: Record<string, Array<string>> = {}
     Object.entries(tagDefinitions).forEach(([category, tags]) => {
-      const categoryTags = (Object.values(tags) as Array<string>).filter(t => allTags.includes(t))
+      const categoryTags = (Object.values(tags)).filter(t => allTags.includes(t))
       if (categoryTags.length > 0) {
         categorized[category] = categoryTags.sort()
       }
@@ -147,7 +84,7 @@ function PortfolioPage() {
     setActiveTags((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]))
 
   const visible = useMemo(
-    () => (activeTags.length ? allProjects.filter((p) => activeTags.every((t) => (p.tags as Array<string>).includes(t))) : allProjects),
+    () => (activeTags.length ? allProjects.filter((p) => activeTags.every((t) => (p.tags).includes(t))) : allProjects),
     [activeTags, allProjects],
   )
 
