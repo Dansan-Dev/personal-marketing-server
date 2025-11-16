@@ -305,9 +305,7 @@ body {
 
 /* Portfolio */
 .portfolio-layout {
-  /*display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 24px;*/
+  /* Wide screens: leave room for left sidebar */
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -315,49 +313,73 @@ body {
 }
 
 .aside {
-  /* FILTER */
-  /*position: sticky;
-  top: 88px;
-  align-self: start;
-  background: var(--color-filter-background);
-  border: 1px solid var(--color-border-dark);
-  border-radius: 12px;
-  padding: 16px;*/
+  /* Wide screens: full-height sidebar on the left */
   position: fixed;
-  top: 100px;           /* adjust to clear your navbar */
-  left: 40px;           /* distance from viewport edge */
-  width: 260px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
   background: var(--color-filter-background);
-  border: 1px solid var(--color-border-dark);
-  border-radius: 12px;
+  border-right: 1px solid var(--color-border-dark);
+  border-radius: 0;
   padding: 16px;
   z-index: 10;
+  overflow-y: auto;
 }
 .aside h3 {
-  text-align: center;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   font-weight: bold;
   font-size: 20px;
 }
-.filter-category {
-  margin-bottom: 20px;
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
+.filter-category { margin-bottom: 10px; }
+.filter-category.open { margin-bottom: 16px; }
 .filter-category:last-child {
   margin-bottom: 0;
 }
 .filter-category-title {
   margin: 0 0 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--color-text-dim);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+.filter-category-title.clickable { cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.filter-category-title .caret { margin-right: 4px; }
 .filter-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+/* Clear filters button */
+.filter-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-standard-button-border-highlight);
+  background: var(--color-standard-button-background);
+  color: var(--color-standard-button-text);
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.filter-clear:hover:not(:disabled) {
+  background: var(--color-standard-button-background-soft-highlight);
+  color: var(--color-standard-button-text-highlight);
+}
+.filter-clear:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .filter-tag {
@@ -537,6 +559,10 @@ body {
 
 /* 1300px is the breakpoint for home screen layout -> vertical display & swap places between carousel and details box*/
 @media (max-width: 1300px) {
+  .portfolio-layout {
+    padding-left: 0; /* no sidebar offset at <=1300px */
+  }
+
   .home-title { font-size: 40px; }
   .home-subtitle { font-size: 20px; }
   .home-desc { font-size: 16px; }
@@ -553,8 +579,17 @@ body {
   }
 
   .aside {
+    /* Boxed filter look for <=1300px */
     position: static;
     width: 660px;
+    background: var(--color-filter-background);
+    border: 1px solid var(--color-border-dark);
+    border-radius: 12px;
+    padding: 16px;
+    top: auto;
+    left: auto;
+    transform: none;
+    overflow: visible;
   }
 
   .project {
@@ -626,6 +661,9 @@ body {
   aside { 
     position: static; 
     width: calc(380px * 2 + 16px); /* width of two cards + gap */
+    top: auto;
+    left: auto;
+    transform: none;
   }
 }
 
@@ -651,6 +689,9 @@ body {
   .aside {
     position: static;
     width: 380px;
+    top: auto;
+    left: auto;
+    transform: none;
   }
 }
 

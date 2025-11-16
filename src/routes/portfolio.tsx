@@ -31,6 +31,11 @@ export const Route = createFileRoute('/portfolio')({
 })
 
 function PortfolioPage() {  
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({})
+  const isExpanded = (c: string) => !!expandedCategories[c]
+  const toggleCategory = (c: string) =>
+    setExpandedCategories((prev) => ({ ...prev, [c]: !prev[c] }))
+  
   // Prepare a canonical list of defined tags for normalization
   const definedTags = useMemo(() => {
     return [
@@ -92,21 +97,39 @@ function PortfolioPage() {
     <div className="page-container">
       <div className="portfolio-layout">
         <aside className="aside">
-          <h3>Filter</h3>
+          <div className="filter-header">
+            <h3>Filter</h3>
+            <button
+              className="filter-clear"
+              onClick={() => setActiveTags([])}
+              disabled={activeTags.length === 0}
+            >
+              Clear
+            </button>
+          </div>
           {Object.entries(tagCategories).map(([category, tags]) => (
-            <div key={category} className="filter-category">
-              <h4 className="filter-category-title">{category}</h4>
-              <div className="filter-tags">
-                {tags.map((t) => (
-                  <button
-                    key={t}
-                    className={`filter-tag ${activeTags.includes(t) ? 'active' : ''}`}
-                    onClick={() => toggleTag(t)}
-                  >
-                    {t}
-                  </button>
-                ))}
-              </div>
+            <div key={category} className={`filter-category ${isExpanded(category) ? 'open' : ''}`}>
+              <button
+                className="filter-category-title clickable"
+                onClick={() => toggleCategory(category)}
+                aria-expanded={isExpanded(category)}
+              >
+                <span className="caret">{isExpanded(category) ? '▾' : '▸'}</span>
+                {category}
+              </button>
+              {isExpanded(category) && (
+                <div className="filter-tags">
+                  {tags.map((t) => (
+                    <button
+                      key={t}
+                      className={`filter-tag ${activeTags.includes(t) ? 'active' : ''}`}
+                      onClick={() => toggleTag(t)}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </aside>
