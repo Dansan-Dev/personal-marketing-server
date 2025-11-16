@@ -47,6 +47,7 @@ function PortfolioPage() {
   
   type YamlProject = {
     id: number
+    client: string
     title: string
     path: string
     desc: string
@@ -136,7 +137,7 @@ function PortfolioPage() {
         <main className="projects">
           {visible.map((p) => (
             <Link key={p.id} className="project" to={'/project/' + p.path} params={{ id: p.path }}>
-              <h3>{p.title}</h3>
+              <h3>{p.client ? `${p.client} - ${p.title}` : p.title}</h3>
               <p>{p.desc}</p>
             </Link>
           ))}
