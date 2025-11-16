@@ -11,18 +11,20 @@ function RouteComponent() {
       name="Smart Restaurant App"
       description="Digital restaurant solution handling and managing online orders. Built to learn Apache Kafka and Microservice Architecture with four microservices: Order, Payment, Delivery, and Kitchen."
       highlights={[
-        'Developed the Order microservice and frontend simulation',
+        'Developed the Order Microservice and Frontend Simulation',
         'Implemented Kafka communication between services',
-        'Built Dockerized local environment',
+        'Built dockerized local environment for working with Kafka Broker Clusters',
+        'Developed tests for Kafka communication'
       ]}
       tech={[
         'Apache Kafka',
         'Spring Boot',
+        'JUnit',
         'Postgres',
         'Docker',
         'ReactJS',
       ]}
-      reflections={`A hands-on introduction to Kafka architecture and microservices. Strengthened collaboration and technical problem-solving skills in a small team environment.`}
+      reflections={`A hands-on introduction to Kafka architecture and microservices. Strengthened team and inter-team collaboration, as well as technical problem-solving skills in a team environment.`}
       links={{
         github: 'https://github.com/saltsthlm/restaurant-order-service',
       }}
