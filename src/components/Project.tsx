@@ -13,6 +13,7 @@ export type ProjectProps = {
       docs?: string
       demo?: string
       presentation?: string
+      extra?: Array<{ name: string; link: string; icon?: string; live?: boolean }>
     }
   }
   
@@ -70,10 +71,16 @@ export type ProjectProps = {
 
             {/* Links */}
             {
-              (links.github || links.demo || links.docs || links.live || links.presentation) &&
+              (links.github || links.demo || links.docs || links.live || links.presentation || (links.extra && links.extra.length > 0)) &&
               <section aria-labelledby="links-title" className="mt-8">
                 <h2 id="links-title" className="text-sm font-semibold uppercase tracking-wide text-[var(--text-dim)]">Links</h2>
                 <div className="mt-3 flex flex-wrap gap-3">
+                  {links.live && (
+                    <a className="btn flex items-center gap-2" href={links.live} target="_blank" rel="noreferrer noopener">
+                      <span className="inline-block h-2 w-2 rounded-full bg-[#50FB85]" aria-hidden />
+                      Live
+                    </a>
+                  )}
                   {
                     links.github &&
                     <a className="btn flex items-center gap-2" href={links.github} target="_blank" rel="noreferrer noopener">
@@ -81,10 +88,25 @@ export type ProjectProps = {
                       GitHub
                     </a>
                   }
-                  {links.live && <a className="btn" href={links.live} target="_blank" rel="noreferrer noopener">App</a>}
                   {links.demo && <a className="btn" href={links.demo} target="_blank" rel="noreferrer noopener">Demo</a>}
                   {links.docs && <a className="btn" href={links.docs} target="_blank" rel="noreferrer noopener">Docs</a>}
                   {links.presentation && <a className="btn" href={links.presentation} target="_blank" rel="noreferrer noopener">Presentation</a>}
+                  {links.extra && links.extra.map((extraLink, i) => (
+                    <a 
+                      key={i} 
+                      className={`btn ${(extraLink.icon || extraLink.live) ? 'flex items-center gap-2' : ''}`} 
+                      href={extraLink.link} 
+                      target="_blank" 
+                      rel="noreferrer noopener"
+                    >
+                      {extraLink.icon ? (
+                        <img src={extraLink.icon} alt="" className="h-4 w-4" />
+                      ) : extraLink.live ? (
+                        <span className="inline-block h-2 w-2 rounded-full bg-[#50FB85]" aria-hidden />
+                      ) : null}
+                      {extraLink.name}
+                    </a>
+                  ))}
                 </div>
               </section>
             }

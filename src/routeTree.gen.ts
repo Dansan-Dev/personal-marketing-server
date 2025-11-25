@@ -16,6 +16,8 @@ import { Route as ProjectResume_builderRouteImport } from './routes/project/resu
 import { Route as ProjectPersonal_websiteRouteImport } from './routes/project/personal_website'
 import { Route as ProjectNova_bankRouteImport } from './routes/project/nova_bank'
 import { Route as ProjectKafka_upskillingRouteImport } from './routes/project/kafka_upskilling'
+import { Route as ProjectGame_galleryRouteImport } from './routes/project/game_gallery'
+import { Route as ProjectElderpath_crusadeRouteImport } from './routes/project/elderpath_crusade'
 import { Route as ProjectChattrickRouteImport } from './routes/project/chattrick'
 import { Route as ProjectAi_assessmentRouteImport } from './routes/project/ai_assessment'
 import { Route as ProjectIdRouteImport } from './routes/project.$id'
@@ -55,6 +57,17 @@ const ProjectKafka_upskillingRoute = ProjectKafka_upskillingRouteImport.update({
   path: '/project/kafka_upskilling',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectGame_galleryRoute = ProjectGame_galleryRouteImport.update({
+  id: '/project/game_gallery',
+  path: '/project/game_gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectElderpath_crusadeRoute =
+  ProjectElderpath_crusadeRouteImport.update({
+    id: '/project/elderpath_crusade',
+    path: '/project/elderpath_crusade',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProjectChattrickRoute = ProjectChattrickRouteImport.update({
   id: '/project/chattrick',
   path: '/project/chattrick',
@@ -78,6 +91,8 @@ export interface FileRoutesByFullPath {
   '/project/$id': typeof ProjectIdRoute
   '/project/ai_assessment': typeof ProjectAi_assessmentRoute
   '/project/chattrick': typeof ProjectChattrickRoute
+  '/project/elderpath_crusade': typeof ProjectElderpath_crusadeRoute
+  '/project/game_gallery': typeof ProjectGame_galleryRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
@@ -90,6 +105,8 @@ export interface FileRoutesByTo {
   '/project/$id': typeof ProjectIdRoute
   '/project/ai_assessment': typeof ProjectAi_assessmentRoute
   '/project/chattrick': typeof ProjectChattrickRoute
+  '/project/elderpath_crusade': typeof ProjectElderpath_crusadeRoute
+  '/project/game_gallery': typeof ProjectGame_galleryRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
@@ -103,6 +120,8 @@ export interface FileRoutesById {
   '/project/$id': typeof ProjectIdRoute
   '/project/ai_assessment': typeof ProjectAi_assessmentRoute
   '/project/chattrick': typeof ProjectChattrickRoute
+  '/project/elderpath_crusade': typeof ProjectElderpath_crusadeRoute
+  '/project/game_gallery': typeof ProjectGame_galleryRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
@@ -117,6 +136,8 @@ export interface FileRouteTypes {
     | '/project/$id'
     | '/project/ai_assessment'
     | '/project/chattrick'
+    | '/project/elderpath_crusade'
+    | '/project/game_gallery'
     | '/project/kafka_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
@@ -129,6 +150,8 @@ export interface FileRouteTypes {
     | '/project/$id'
     | '/project/ai_assessment'
     | '/project/chattrick'
+    | '/project/elderpath_crusade'
+    | '/project/game_gallery'
     | '/project/kafka_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
@@ -141,6 +164,8 @@ export interface FileRouteTypes {
     | '/project/$id'
     | '/project/ai_assessment'
     | '/project/chattrick'
+    | '/project/elderpath_crusade'
+    | '/project/game_gallery'
     | '/project/kafka_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
@@ -154,6 +179,8 @@ export interface RootRouteChildren {
   ProjectIdRoute: typeof ProjectIdRoute
   ProjectAi_assessmentRoute: typeof ProjectAi_assessmentRoute
   ProjectChattrickRoute: typeof ProjectChattrickRoute
+  ProjectElderpath_crusadeRoute: typeof ProjectElderpath_crusadeRoute
+  ProjectGame_galleryRoute: typeof ProjectGame_galleryRoute
   ProjectKafka_upskillingRoute: typeof ProjectKafka_upskillingRoute
   ProjectNova_bankRoute: typeof ProjectNova_bankRoute
   ProjectPersonal_websiteRoute: typeof ProjectPersonal_websiteRoute
@@ -211,6 +238,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectKafka_upskillingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/project/game_gallery': {
+      id: '/project/game_gallery'
+      path: '/project/game_gallery'
+      fullPath: '/project/game_gallery'
+      preLoaderRoute: typeof ProjectGame_galleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/elderpath_crusade': {
+      id: '/project/elderpath_crusade'
+      path: '/project/elderpath_crusade'
+      fullPath: '/project/elderpath_crusade'
+      preLoaderRoute: typeof ProjectElderpath_crusadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/project/chattrick': {
       id: '/project/chattrick'
       path: '/project/chattrick'
@@ -242,6 +283,8 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectIdRoute: ProjectIdRoute,
   ProjectAi_assessmentRoute: ProjectAi_assessmentRoute,
   ProjectChattrickRoute: ProjectChattrickRoute,
+  ProjectElderpath_crusadeRoute: ProjectElderpath_crusadeRoute,
+  ProjectGame_galleryRoute: ProjectGame_galleryRoute,
   ProjectKafka_upskillingRoute: ProjectKafka_upskillingRoute,
   ProjectNova_bankRoute: ProjectNova_bankRoute,
   ProjectPersonal_websiteRoute: ProjectPersonal_websiteRoute,

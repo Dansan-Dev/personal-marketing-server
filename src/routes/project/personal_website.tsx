@@ -23,7 +23,7 @@ function RouteComponent() {
       highlights={[
         'Responsive layout for different screen sizes and devices',
         'Deployment via fly.io',
-        'DNS Coupled to the danielsandstrom.org Loopia Domain, and managed via Cloudflare'
+        'DNS configuration and management via Cloudflare'
       ]}
       links={{ github: 'https://github.com/Dansan-Dev/personal-marketing-server' }}
     />
