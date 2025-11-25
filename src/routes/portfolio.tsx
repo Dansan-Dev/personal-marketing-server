@@ -14,6 +14,7 @@ const tagDefinitions = {
     ai: 'AI',
     microservices: 'Microservices',
     webDevelopment: 'Web Development',
+    gameDevelopment: 'Game Development',
   },
   Technologies: {
     java: 'Java',
@@ -35,6 +36,7 @@ const tagDefinitions = {
   },
   Skills: {
     leadership: 'Leadership',
+    selfLeadership: 'Self-Leadership',
     presenting: 'Presenting',
   },
 }
@@ -45,7 +47,7 @@ export const Route = createFileRoute('/portfolio')({
 
 function PortfolioPage() {  
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({})
-  const isExpanded = (c: string) => !!expandedCategories[c]
+  const isExpanded = (c: string) => expandedCategories[c]
   const toggleCategory = (c: string) =>
     setExpandedCategories((prev) => ({ ...prev, [c]: !prev[c] }))
   
