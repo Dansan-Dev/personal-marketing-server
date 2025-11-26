@@ -34,13 +34,13 @@
 
   --color-download-button-text: var(--color-text-light);
   --color-download-button-hover-text: #082825;
-  --color-download-button-background: rgba(255,255,255,0.06);
+  --color-download-button-background: rgba(255, 255, 255, 0.06);
   --color-download-button-background-hover: var(--color-button-hover);
   --color-download-button-border: var(--color-border-dark);
   --color-download-button-hover-border: transparent;
 
-  --color-project-background: rgba(12,20,32,0.5);
-  --color-project-background-hover: color-mix(in srgb, white 10%, rgba(12,20,32,0.01));
+  --color-project-background: rgba(12, 20, 32, 0.5);
+  --color-project-background-hover: color-mix(in srgb, white 10%, rgba(12, 20, 32, 0.01));
   --color-project-border: --color-border-dark;
 
   --color-back-button-background: rgba(12, 20, 32, 0.5);
@@ -64,30 +64,30 @@
   --color-navbar-a-hover-box-shadow: rgba(255, 255, 255, 0.06);
   --color-navbar-a-active-box-shadow: rgba(255, 255, 255, 0.00);
 
-  --color-home-title-text-shadow: rgba(0,0,0,0.25);
-  --color-home-subtitle-text-shadow: rgba(0,0,0,0.22);
-  --color-home-desc-text-shadow: rgba(0,0,0,0.18);
+  --color-home-title-text-shadow: rgba(0, 0, 0, 0.25);
+  --color-home-subtitle-text-shadow: rgba(0, 0, 0, 0.22);
+  --color-home-desc-text-shadow: rgba(0, 0, 0, 0.18);
 
   --color-home-desc-text: #ffffff;
 
   --color-home-text-background: rgba(8, 16, 28, 0.35);
-  --color-home-text-box-shadow: rgba(0,0,0,0.18);
+  --color-home-text-box-shadow: rgba(0, 0, 0, 0.18);
 
   --color-carousel-background: rgba(12, 20, 32, 0.4);
-  --color-carousel-dot-background: rgba(255,255,255,0.35);
+  --color-carousel-dot-background: rgba(255, 255, 255, 0.35);
 
   --color-bubble-bg: #ffffff;
-  --color-bubble-background: rgba(255,255,255,0.06);
+  --color-bubble-background: rgba(255, 255, 255, 0.06);
   --color-bubble-bg-background: transparent;
 
-  --color-filter-background: rgba(12,20,32,0.5);
+  --color-filter-background: rgba(12, 20, 32, 0.5);
 
   --color-tag-active-border: transparent;
 
-  --color-resume-frame-background: rgba(12,20,32,0.5);
+  --color-resume-frame-background: rgba(12, 20, 32, 0.5);
 
-  --color-modal-background: rgba(0,0,0,0.65);
-  --color-modal-close-background: rgba(12,20,32,0.8);
+  --color-modal-background: rgba(0, 0, 0, 0.65);
+  --color-modal-close-background: rgba(12, 20, 32, 0.8);
 
   --color-media-navbar-background: rgba(12, 20, 32, 0.7);
   --color-media-navbar-a-hover-background: rgba(255, 255, 255, 0.06);
@@ -98,11 +98,9 @@
 
   /*---- Background Gradient ----*/
 
-  --background-gradient: linear-gradient(
-          to bottom,
-          var(--color-main-light) 28%,
-          var(--color-main-dark) 60%
-  ) fixed;
+  --background-gradient: linear-gradient(to bottom,
+      var(--color-main-light) 28%,
+      var(--color-main-dark) 60%) fixed;
 
   /*---- SIZE ----*/
 
@@ -117,7 +115,9 @@
   --bubble-bg-offset-y: 0px;
 }
 
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
 }
 
@@ -131,13 +131,15 @@ body {
 .page-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 96px 16px 32px; /* top padding leaves space for fixed navbar */
+  padding: 96px 16px 32px;
+  /* top padding leaves space for fixed navbar */
 }
 
 /* Full-width container for Home */
 .home-full {
   width: 100%;
-  padding: 96px 16px 32px; /* match page-container top spacing */
+  padding: 96px 16px 32px;
+  /* match page-container top spacing */
 }
 
 /* Navbar */
@@ -148,7 +150,8 @@ body {
   right: 0;
   display: flex;
   justify-content: center;
-  pointer-events: none; /* allow inner element to handle events */
+  pointer-events: none;
+  /* allow inner element to handle events */
   z-index: 50;
 }
 
@@ -156,7 +159,7 @@ body {
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
   padding: 10px 16px;
   background: var(--color-navbar-background);
   border: 1px solid var(--color-border-dark);
@@ -189,11 +192,15 @@ body {
 /* Home */
 .home-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal halves spanning full width */
-  column-gap: 0; /* remove horizontal spacing between halves */
-  align-items: center; /* vertically center text and carousel */
+  grid-template-columns: 1fr 1fr;
+  /* two equal halves spanning full width */
+  column-gap: 0;
+  /* remove horizontal spacing between halves */
+  align-items: center;
+  /* vertically center text and carousel */
   min-height: calc(100vh - 140px);
-  justify-items: center; /* center content within each half on the x-axis */
+  justify-items: center;
+  /* center content within each half on the x-axis */
 }
 
 .home-title {
@@ -210,6 +217,7 @@ body {
   opacity: 0.95;
   text-shadow: 0 2px 8px var(--color-home-subtitle-text-shadow);
 }
+
 .home-desc {
   margin: 4px 0 0;
   font-size: 19px;
@@ -218,14 +226,15 @@ body {
   text-shadow: 0 2px 8px var(--color-home-desc-text-shadow);
 }
 
-.home-text { 
+.home-text {
   background: var(--color-home-text-background);
   border: 1px solid var(--color-border-dark);
   border-radius: 16px;
   padding: 22px 22px;
   box-shadow: 0 4px 24px var(--color-home-text-box-shadow);
   width: 100%;
-  max-width: 640px; /* keep readable measure while centered */
+  max-width: 640px;
+  /* keep readable measure while centered */
 }
 
 /* Carousel */
@@ -248,18 +257,22 @@ body {
 
 .carousel-dots {
   position: absolute;
-  left: 0; right: 0; bottom: 10px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
   display: flex;
   justify-content: center;
   gap: 8px;
 }
 
 .carousel-dot {
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
   border-radius: 999px;
   background: var(--color-carousel-dot-background);
   border: 1px solid var(--color-border-dark);
 }
+
 .carousel-dot.active {
   background: var(--color-main-light);
 }
@@ -326,23 +339,33 @@ body {
   z-index: 10;
   overflow-y: auto;
 }
+
 .aside h3 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: bold;
   font-size: 20px;
 }
+
 .filter-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 12px;
 }
-.filter-category { margin-bottom: 10px; }
-.filter-category.open { margin-bottom: 16px; }
+
+.filter-category {
+  margin-bottom: 10px;
+}
+
+.filter-category.open {
+  margin-bottom: 16px;
+}
+
 .filter-category:last-child {
   margin-bottom: 0;
 }
+
 .filter-category-title {
   margin: 0 0 10px;
   font-size: 16px;
@@ -351,8 +374,18 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.filter-category-title.clickable { cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
-.filter-category-title .caret { margin-right: 4px; }
+
+.filter-category-title.clickable {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-category-title .caret {
+  margin-right: 4px;
+}
+
 .filter-tags {
   display: flex;
   flex-wrap: wrap;
@@ -373,10 +406,12 @@ body {
   margin-bottom: 8px;
   cursor: pointer;
 }
+
 .filter-clear:hover:not(:disabled) {
   background: var(--color-standard-button-background-soft-highlight);
   color: var(--color-standard-button-text-highlight);
 }
+
 .filter-clear:disabled {
   opacity: 0.6;
   cursor: not-allowed;
@@ -416,7 +451,8 @@ body {
   border: 1px solid var(--color-project-border);
   border-radius: 12px;
   padding: 16px;
-  height: 90px; /* fixed height */
+  height: 90px;
+  /* fixed height */
   overflow: hidden;
   max-width: 680px;
 }
@@ -515,7 +551,8 @@ body {
 
 .modal-close {
   position: absolute;
-  top: 8px; right: 8px;
+  top: 8px;
+  right: 8px;
   background: var(--color-modal-close-background);
   border: 1px solid var(--color-border-dark);
   color: var(--color-text-light);
@@ -528,24 +565,33 @@ body {
 .back-button-link {
   pointer-events: auto;
   position: absolute;
-  left: 1rem; /* left-4 */
-  top: 1rem;  /* top-4 */
+  left: 1rem;
+  /* left-4 */
+  top: 1rem;
+  /* top-4 */
 
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem; /* gap-2 */
+  gap: 0.5rem;
+  /* gap-2 */
 
-  padding: 0.5rem 1rem; /* py-2 px-4 */
+  padding: 0.5rem 1rem;
+  /* py-2 px-4 */
   border: 1px solid var(--color-back-button-border);
   background: var(--color-back-button-background);
-  border-radius: 0.75rem; /* rounded-xl */
+  border-radius: 0.75rem;
+  /* rounded-xl */
 
   color: var(--color-back-button-text);
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 500; /* font-medium */
+  font-size: 0.875rem;
+  /* text-sm */
+  font-weight: 500;
+  /* font-medium */
 
-  box-shadow: 0 1px 2px var(--color-back-button-box-shadow); /* shadow-sm */
-  transition: all 0.2s; /* transition-all duration-200 */
+  box-shadow: 0 1px 2px var(--color-back-button-box-shadow);
+  /* shadow-sm */
+  transition: all 0.2s;
+  /* transition-all duration-200 */
 }
 
 .back-button-link:hover {
@@ -560,16 +606,35 @@ body {
 /* 1300px is the breakpoint for home screen layout -> vertical display & swap places between carousel and details box*/
 @media (max-width: 1300px) {
   .portfolio-layout {
-    padding-left: 0; /* no sidebar offset at <=1300px */
+    padding-left: 0;
+    /* no sidebar offset at <=1300px */
   }
 
-  .home-title { font-size: 40px; }
-  .home-subtitle { font-size: 20px; }
-  .home-desc { font-size: 16px; }
-  .home-text { width: 460px; }
+  .home-title {
+    font-size: 40px;
+  }
 
-  .carousel { width: 420px; height: 420px; }
-  .carousel img { width: 420px; height: 420px; }
+  .home-subtitle {
+    font-size: 20px;
+  }
+
+  .home-desc {
+    font-size: 16px;
+  }
+
+  .home-text {
+    width: 460px;
+  }
+
+  .carousel {
+    width: 420px;
+    height: 420px;
+  }
+
+  .carousel img {
+    width: 420px;
+    height: 420px;
+  }
 
   .portfolio-layout {
     display: grid;
@@ -613,11 +678,22 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .home-grid { grid-template-columns: 1fr; }
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .home-title { font-size: 36px; }
-  .home-subtitle { font-size: 18px; }
-  .home-desc { font-size: 14px; }
+  .home-title {
+    font-size: 36px;
+  }
+
+  .home-subtitle {
+    font-size: 18px;
+  }
+
+  .home-desc {
+    font-size: 14px;
+  }
+
   .home-text {
     width: 360px;
     order: 2;
@@ -628,16 +704,26 @@ body {
     justify-content: center;
   }
 
-  .carousel { width: 360px; height: 360px; }
-  .carousel img { width: 360px; height: 360px; }
+  .carousel {
+    width: 360px;
+    height: 360px;
+  }
+
+  .carousel img {
+    width: 360px;
+    height: 360px;
+  }
+
   .carousel-container {
     order: 1;
     margin-bottom: 8px;
   }
 
   .portfolio-layout {
-    grid-template-columns: 1fr; /* two even columns again */
-    gap: 16px; /* optional smaller gap */
+    grid-template-columns: 1fr;
+    /* two even columns again */
+    gap: 16px;
+    /* optional smaller gap */
     justify-items: center;
   }
 
@@ -653,14 +739,18 @@ body {
   }
 
   .project {
-    width: 380px;               /* fixed width for each card */
-    height: 110px;              /* fixed height */
-    margin: 0 auto;             /* center if narrower than column */
+    width: 380px;
+    /* fixed width for each card */
+    height: 110px;
+    /* fixed height */
+    margin: 0 auto;
+    /* center if narrower than column */
   }
 
   .aside {
-    position: static; 
-    width: calc((380px * 2) + 16px); /* width of two cards + gap */
+    position: static;
+    width: calc((380px * 2) + 16px);
+    /* width of two cards + gap */
     top: auto;
     left: auto;
     transform: none;
@@ -704,7 +794,8 @@ body {
   }
 
   /* Lock viewport and prevent scroll on mobile */
-  html, body {
+  html,
+  body {
     height: 100vh;
   }
 
@@ -754,15 +845,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    align-items: center; /* center items to avoid side cutoffs */
+    align-items: center;
+    /* center items to avoid side cutoffs */
     gap: 0;
     box-sizing: border-box;
   }
 
   .carousel-container {
-    margin: 8px 0 0 0; /* space below carousel */
-    height: auto; /* let content define height */
-    display: flex; /* center the carousel */
+    margin: 8px 0 0 0;
+    /* space below carousel */
+    height: auto;
+    /* let content define height */
+    display: flex;
+    /* center the carousel */
     justify-content: center;
     width: 100%;
   }
@@ -773,25 +868,39 @@ body {
     width: min(84vw, 320px, 44vh);
     height: min(84vw, 320px, 44vh);
     max-width: 100%;
-    aspect-ratio: 1 / 1; /* square carousel to avoid layout shifts */
+    aspect-ratio: 1 / 1;
+    /* square carousel to avoid layout shifts */
   }
 
   .carousel img {
     width: 100%;
-    height: 100%; /* fill the aspect-ratio box */
+    height: 100%;
+    /* fill the aspect-ratio box */
     object-fit: cover;
   }
 
   .home-text {
-    width: min(84vw, 320px, 44vh); /* match carousel width */
+    width: min(84vw, 320px, 44vh);
+    /* match carousel width */
     padding: 18px;
     max-width: 100%;
-    margin-top: 8px; /* ensure separation */
+    margin-top: 8px;
+    /* ensure separation */
   }
 
-  .home-title { font-size: 28px; margin-bottom: 6px; }
-  .home-subtitle { font-size: 16px; margin-bottom: 10px}
-  .home-desc { font-size: 12px; }
+  .home-title {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .home-subtitle {
+    font-size: 16px;
+    margin-bottom: 10px
+  }
+
+  .home-desc {
+    font-size: 12px;
+  }
 
   .bubble {
     width: var(--bubble-size);
@@ -802,7 +911,8 @@ body {
 
   .navbar-wrap {
     position: sticky;
-    top: 0;              /* dock to very top */
+    top: 0;
+    /* dock to very top */
     left: 0;
     right: 0;
     justify-content: stretch;
@@ -811,7 +921,8 @@ body {
   .navbar {
     width: 100%;
     max-width: none;
-    border-radius: 0;    /* square bar */
+    border-radius: 0;
+    /* square bar */
     height: var(--nav-h);
     padding: 0 12px;
     box-sizing: border-box;
@@ -831,10 +942,13 @@ body {
   /* Make links feel like mobile buttons */
   .navbar a {
     font-size: 14px;
-    flex: 1 1 0;          /* spread edge-to-edge */
+    flex: 1 1 0;
+    /* spread edge-to-edge */
     text-align: center;
-    padding: 12px 8px;    /* ≥44px touch height incl. line-height */
-    border-radius: 8px;   /* subtler, squared look */
+    padding: 12px 8px;
+    /* ≥44px touch height incl. line-height */
+    border-radius: 8px;
+    /* subtler, squared look */
     line-height: 1.2;
     color: var(--color-text-dim);
     background: transparent;
@@ -854,18 +968,21 @@ body {
   }
 
   /*--------------------------------*/
-  
+
 
   /* Show the wrapper on mobile (if that's your intent) */
-  .back-button { 
-    display: none;        /* or keep none if you only show with .hide */
-    position: relative;    /* comes from JSX, but safe to assert */
+  .back-button {
+    display: none;
+    /* or keep none if you only show with .hide */
+    position: relative;
+    /* comes from JSX, but safe to assert */
   }
 
   /* If .hide means "show on mobile", keep this; 
      if .hide means "actually hide", flip it to display:none. */
-  .back-button.hide { 
-    display: block;        /* <-- adjust to your intended logic */
+  .back-button.hide {
+    display: block;
+    /* <-- adjust to your intended logic */
     bottom: 20px;
   }
 
@@ -875,11 +992,14 @@ body {
     justify-content: center;
     gap: 8px;
     width: 100%;
-    height: 48px;                /* comfortable tap height */
-    background: var(--color-back-button-hide-background); /* same glass feel as navbar */
+    height: 48px;
+    /* comfortable tap height */
+    background: var(--color-back-button-hide-background);
+    /* same glass feel as navbar */
     border: 0;
     border-top: 2px solid var(--color-back-button-hide-border);
-    border-radius: 0;            /* square edges */
+    border-radius: 0;
+    /* square edges */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: var(--color-back-button-hide-text);
@@ -887,9 +1007,12 @@ body {
     font-weight: 500;
     transition: background 0.2s ease, color 0.2s ease;
 
-    left: 50% !important;             /* override Tailwind's left-4 */
-    transform: translateX(-50%);      /* true centering */
-    right: auto;                      /* ensure no conflicting right */
+    left: 50% !important;
+    /* override Tailwind's left-4 */
+    transform: translateX(-50%);
+    /* true centering */
+    right: auto;
+    /* ensure no conflicting right */
   }
 
   .back-button.hide a:hover {
@@ -910,8 +1033,10 @@ body {
     height: calc(100vh - var(--nav-h));
     display: flex;
     flex-direction: column;
-    justify-content: center;       /* vertical centering */
-    align-items: center;           /* horizontal centering */
+    justify-content: center;
+    /* vertical centering */
+    align-items: center;
+    /* horizontal centering */
   }
 
   .resume-options-bar {
@@ -946,7 +1071,9 @@ body {
     justify-content: center;
   }
 
-  .home-title, .home-subtitle, .home-desc {
+  .home-title,
+  .home-subtitle,
+  .home-desc {
     text-align: center;
   }
 
