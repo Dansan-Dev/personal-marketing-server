@@ -11,6 +11,7 @@ function RouteComponent() {
       name="Smart Restaurant App"
       description="Digital restaurant solution handling and managing online orders. Built to learn Apache Kafka and Microservice Architecture with four microservices: Order, Payment, Delivery, and Kitchen."
       highlights={[
+        'Self-driven studies Apache Kafka and Microservice Architecture',
         'Developed the Order Microservice and Frontend Simulation',
         'Implemented Kafka communication between services',
         'Built dockerized local environment for working with Kafka Broker Clusters',
